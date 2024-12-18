@@ -15,6 +15,8 @@ const generateGLShader = (contents, type) => {
     return shader;
 }
 
+const generateShader 
+
 export async function generateProgram() {
 
     const vertexShaderName = "default";
@@ -60,4 +62,19 @@ export async function generateProgram() {
     gl.enableVertexAttribArray(uvAttribLocation);
 
     gl.useProgram(program);
+}
+
+class Shader {
+
+    constructor(vertexShaderName, fragmentShaderName) {
+	const vertexPath = "script/web-gl/shader/vertex/" + vertexShaderName + ".shader";
+    const vertexContents = await readFile(vertexPath);
+    const vertexShader = generateGLShader(vertexContents, "vertex");
+
+    const fragmentPath = "script/web-gl/shader/fragment/" + fragmentShaderName + ".shader"
+    const fragmentContents = await readFile(fragmentPath);
+    const fragmentShader = generateGLShader(fragmentContents, "fragment");
+
+    }
+    
 }
