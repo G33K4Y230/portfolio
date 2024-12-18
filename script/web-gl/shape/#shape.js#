@@ -25,13 +25,15 @@ export default class Shape {
 
     draw() {
 
-	if(this._shader.program !== null) {
-	    this._shader.use();
-	    gl.bindBuffer(gl.ARRAY_BUFFER, this._VBO);
-	    if(this._indices.length > 0)
-		gl.drawElements(gl.TRIANGLES, this._indices.length, gl.UNSIGNED_INT, 0);
-	    else
-		gl.drawArrays(gl.TRIANGLES, 0, this._vertices.length);
+	if(this._shader !== null) {
+	this._shader.program);
+	
+	gl.bindBuffer(gl.ARRAY_BUFFER, this._VBO);
+	if(this._indices.length > 0)
+	    gl.drawElements(gl.TRIANGLES, this._indices.length, gl.UNSIGNED_INT, 0);
+	else
+	    gl.drawArrays(gl.TRIANGLES, 0, this._vertices.length);
+
 	}
     }
     

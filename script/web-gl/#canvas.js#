@@ -1,4 +1,4 @@
-import { generateShaders } from "./shader/shader.js" 
+import { SHADER_DEFAULT, generateShaders } from "./shader/shader.js" 
 import Triangle from "./shape/triangle.js"
 
 export var gl;
@@ -20,14 +20,18 @@ const initializeWebGL = () => {
 initializeWebGL();
 generateShaders();
 
+await sleep(500);
+
 const triangle = new Triangle(2);
 
-gl.clearColor(0.0, 0.0, 0.0, 1.0);
-
 function draw() {
-    gl.clear(gl.COLOR_BUFFER_BIT, gl.DEPTH_BUFFER_BIT);    
+    gl.clearColor(0.0, 0.0, 0.0, 1.0);
+    gl.clear(gl.COLOR_BUFFER_BIT, gl.DEPTH_BUFFER_BIT);
+    SHADER_DEFAULT.use();
     triangle.draw();
     requestAnimationFrame(draw);    
 }
 
-draw();
+setTimeout(() => {
+    draw();
+}, 500)
