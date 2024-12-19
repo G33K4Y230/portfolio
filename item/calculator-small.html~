@@ -1,0 +1,27 @@
+
+      <!-- ITEM WRAPPER -->
+      <div class="flex justify-center items-center my-5 rounded-md h-[30vh] w-[60vw] border-white border-solid border-4 bg-white/60 blackdrop-blur-lg">
+	<div class="flex items-center gap-8 w-[90%] h-[80%]">
+	  <!-- PREVIEW IMAGE -->
+	  <div class="bg-center bg-[url('img/calculator.png')] bg-cover w-[40%] h-[100%] border-white border-solid border-2 rounded-lg">
+	    
+	  </div>
+
+	  <!-- DESCRIPTION -->
+	  <div class = "w-[60%] h-[100%]">
+	    <h2 class="text-3xl mr-1">Calculator</h2>
+	    <p class="text-sm">HTML, TailWind, JavaScript</p>
+	    <hr class="mt-2 mb-1">
+	    <p>
+	      A calculator created using HTML and JavaScript. All of the css is done with TailWind. It implements TailWind's grid template layout system in order to create a balanced UI. The functionality is implemented in javascript as well as handling the input and output elements via the DOM.</p>
+
+	    <!-- LINKS -->
+	    <div class="mt-2">
+	    <a href = "#" class=""><b>> View Live</b></a></br>
+	    <a href = "#"><b>> Source Code</b></a>
+	    </div>
+	    
+	  </div>
+	  
+	</div>
+      </div>
