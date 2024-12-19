@@ -1,0 +1,14 @@
+import Shape from "./shape.js"
+
+class Sphere extends Shape {
+    c
+    onstructor() {
+	super();
+	generateVertices();
+	generateBuffers();
+    }
+
+    generateVertices() {
+
+    }
+}
