@@ -17,6 +17,7 @@ const generateGLShader = (contents, type) => {
 
 export async function generateShaders() {
     SHADER_DEFAULT = new Shader("default", "default");
+    await SHADER_DEFAULT.generate();
 }
 
 class Shader {
@@ -25,13 +26,13 @@ class Shader {
 	this._vertexShaderName = vertexShaderName;
 	this._fragmentShaderName = fragmentShaderName;
 	this._program = null;
-	this.generate();
+//	this.generate();
     }
 
     get program() {
 	return this._program;
     }
-
+    
     async generate() {
 
 	const vertexPath = "script/web-gl/shader/vertex/" + this._vertexShaderName + ".shader";
@@ -42,16 +43,23 @@ class Shader {
 	const fragmentContents = await readFile(fragmentPath);
 	const fragmentShader = generateGLShader(fragmentContents, "fragment");
 
-	this._program = gl.createProgram();
+	this._program = await gl.createProgram();
 	gl.attachShader(this._program, vertexShader);
 	gl.attachShader(this._program, fragmentShader);
-	gl.linkProgram(this._program);
+	await gl.linkProgram(this._program);
 	if(!gl.getProgramParameter(this._program, gl.LINK_STATUS)) {
 	    console.error("Error! Failed to link shader program!\n", glGetProgramInfoLog(program));
 	    return;
 	}
-	
-	this.generateProgramAttributes();	
+
+	gl.deleteShader(vertexShader);
+	gl.deleteShader(fragmentShader);
+	this.generateProgramAttributes();
+    }
+
+    setUniformMatrix4fv(name, values) {
+	var location = gl.getUniformLocation(this._program, name);
+	gl.uniformMatrix4fv(location, gl.FALSE, values);
     }
 
     generateProgramAttributes() {
@@ -62,7 +70,7 @@ class Shader {
 	    3,
 	    gl.FLOAT,
 	    gl.FALSE,
-	    5 * Float32Array.BYTES_PER_ELEMENT,
+	    (3 + 2) * Float32Array.BYTES_PER_ELEMENT,
 	    0
 	);
 	
@@ -72,7 +80,7 @@ class Shader {
 	    2,
 	    gl.FLOAT,
 	    gl.FALSE,
-	    5 * Float32Array.BYTES_PER_ELEMENT,
+	    (3 + 2) * Float32Array.BYTES_PER_ELEMENT,
 	    3 * Float32Array.BYTES_PER_ELEMENT
 	);
 

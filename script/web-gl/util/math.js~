@@ -1,0 +1,26 @@
+import { Vector3D } from "./type/vector.js" 
+
+export const cross = (a, b) => {
+    
+    const x = a.y * b.z - a.z * b.y;
+    const y = a.z * b.x - a.x * b.z;
+    const z = a.x * b.y - a.y * b.x;
+
+    return new Vector3D(x, y, z);
+}
+
+export const add = (a, b) => {
+    return new Vector3D(
+	a.x + b.x,
+	a.y + b.y,
+	a.z + b.z
+    );
+}
+
+export const multiply = (vector, scale) => {
+    return new Vector3D(
+	vector.x * scale,
+	vector.y * scale,
+	vector.z * scale
+    );
+}
