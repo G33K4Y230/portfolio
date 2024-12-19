@@ -14,9 +14,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- GOOGLE FONT -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
 
   </head>
   
@@ -37,27 +37,30 @@
 
       <!-- CONTENT -->
 
+      <section>
+	<div id="content-wrapper" class="max-h-[60vh] ease-in-out duration-300 overflow-hidden">
 
-      <!-- ITEM WRAPPER -->
-      <div class="flex justify-center items-center rounded-md h-[30vh] w-[60vw] border-white border-solid border-4 bg-white/60 blackdrop-blur-lg">
-	<div class="flex items-center gap-8 w-[90%] h-[80%]">
-	  <!-- PREVIEW IMAGE -->
-	  <div class="bg-center bg-[url('img/calculator.png')] bg-cover w-[40%] h-[100%] border-white border-solid border-2 rounded-lg">
-	    
+	  <div id="content-work" class="h-0 collapse">
+	    <?php
+	     include 'item/calculator-small.html';
+	     include 'item/chess-small.html';
+	     include 'item/website-small.html';
+	     ?>
 	  </div>
-
-	  <!-- DESCRIPTION -->
-	  <div class = "w-[60%] h-[100%]">
-	    <h2 class="text-3xl mr-1">Calculator</h2>
-	    <p class="text-sm">HTML, TailWind, JavaScript</p>
-	    <hr class="mt-2 mb-1">
-	    <p>
-	    A calculator created using HTML and JavaScript. All of the css is done with TailWind. It implements TailWind's grid template layout system in order to create a balanced UI. The functionality is implemented in javascript as well as handling the input and output elements via the DOM.</p>
+	  
+	  <div id="content-contact">
+	    <div class="flex flex-col gap-5 justify-center items-center h-[35vh] w-[60vw] mb-6 rounded-md border-solid border-2 border-white bg-white/50">
+	      <h3 class="text-3xl">CONTACT</h3>
+	      <hr>
+	      <div class="flex flex-col gap-1 justify-center items-center">
+	      <p>email: poweredbygeeko@gmail.com</p>
+	      <p>tel: +447947626084
+		</div>
+	    </div>
 	  </div>
 	  
 	</div>
-      </div>
-
+      </section>
       
       <!-- NAVIGATION BAR -->
       <nav>
