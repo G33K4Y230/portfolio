@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8" />
+
+    <title>GeeKo</title>
+    
+    <script src="script/web-gl/canvas.js" type="module"></script>
+    <script src="script/js/index.js"></script>
+
+    <!-- TAILWIND -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
+
+  </head>
+  
+  <body class="m-0" style="font-family: 'Jersey 25', serif;">
+    
+    <!-- WEBGL CANVAS AT BACKGROUND -->
+    <canvas id="web-gl-canvas" class="absolute -z-20"></canvas>
+
+    <!-- CONTENT WRAPPER -->
+    <div class="flex flex-col gap-2 justify-center items-center w-[100vw] h-[100vh] bg-black/30 text-white absolute backdrop-blur-sm">
+
+      <!-- HEADER -->
+      <section>
+      <h1 class="text-7xl font-black">
+	GIANNELLI ILENDA
+      </h1>
+      </section>
+
+      <!-- CONTENT -->
+
+      <div id="content-wrapper" class="max-h-[60vh] ease-in-out duration-300 overflow-auto">
+
+	<?php
+	 include 'item/calculator-small.html';
+	 include 'item/chess-small.html';
+	 include 'item/website-small.html';
+	 ?>
+	
+      </div>
+      
+      <!-- NAVIGATION BAR -->
+      <nav>
+	<ul>
+	  <li class="inline mx-3"><a href="about.php">ABOUT</a></li>
+	  -
+	  <li class="inline mx-3"><a href="index.php">WORK</a></li>
+	  -
+	  <li class="inline mx-3"><a href="contact.php">CONTACT</a></li>
+	</ul>
+      </nav>
+      
+    </div>
+  </body>
+</html>
