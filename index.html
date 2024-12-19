@@ -8,6 +8,7 @@
     <title>GeeKo</title>
     
     <script src="script/web-gl/canvas.js" type="module"></script>
+    <script src="script/js/index.js"></script>
 
     <!-- TAILWIND -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -27,15 +28,47 @@
     <!-- CONTENT WRAPPER -->
     <div class="flex flex-col gap-2 justify-center items-center w-[100vw] h-[100vh] bg-black/30 text-white absolute backdrop-blur-sm">
 
-      <!-- CONTENT -->
+      <!-- HEADER -->
+      <section>
       <h1 class="text-7xl font-black">
 	GIANNELLI ILENDA
       </h1>
+      </section>
 
-      <!-- MAIN CONTENT -->
-      <div class = "h-[0%] w-[60%] bg-white my-0"></div>
+      <!-- CONTENT -->
+
+
+      <!-- ITEM WRAPPER -->
+      <div class="flex justify-center items-center rounded-md h-[30vh] w-[60vw] border-white border-solid border-4 bg-white/60 blackdrop-blur-lg">
+	<div class="flex items-center gap-8 w-[90%] h-[80%]">
+	  <!-- PREVIEW IMAGE -->
+	  <div class="bg-center bg-[url('img/calculator.png')] bg-cover w-[40%] h-[100%] border-white border-solid border-2 rounded-lg">
+	    
+	  </div>
+
+	  <!-- DESCRIPTION -->
+	  <div class = "w-[60%] h-[100%]">
+	    <h2 class="text-3xl mr-1">Calculator</h2>
+	    <p class="text-sm">HTML, TailWind, JavaScript</p>
+	    <hr class="mt-2 mb-1">
+	    <p>
+	    A calculator created using HTML and JavaScript. All of the css is done with TailWind. It implements TailWind's grid template layout system in order to create a balanced UI. The functionality is implemented in javascript as well as handling the input and output elements via the DOM.</p>
+	  </div>
+	  
+	</div>
+      </div>
+
       
-      <p>ABOUT - WORK - CONTACT</p>
+      <!-- NAVIGATION BAR -->
+      <nav>
+	<ul>
+	  <li class="inline mx-3"><a href="#">ABOUT</a></li>
+	  -
+	  <li class="inline mx-3"><a href="#" onclick="showWork()">WORK</a></li>
+	  -
+	  <li class="inline mx-3"><a href="#">CONTACT</a></li>
+	</ul>
+      </nav>
       
     </div>
   </body>
