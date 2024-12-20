@@ -10,8 +10,8 @@ const showWork = () => {
 	    wrapper.classList.remove("h-0");
 	}
 
-	wrapper.classList.remove("overflow-hidden");
-	wrapper.classList.add("overflow-auto");
+	//wrapper.classList.remove("overflow-hidden");
+	//wrapper.classList.add("overflow-auto");
 
 	work.classList.remove("h-0");
 	work.classList.remove("collapse");
