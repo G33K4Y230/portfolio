@@ -1,76 +1,113 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta charset="UTF-8" />
+<head>
 
-    <title>GeeKo</title>
-    
-    <script src="script/web-gl/canvas.js" type="module"></script>
-    <script src="script/js/index.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
 
-    <!-- TAILWIND -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <title>GeeKo</title>
 
-    <!-- GOOGLE FONT -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
+  <script src="script/web-gl/canvas.js" type="module"></script>
+  <script src="script/js/index.js"></script>
 
-  </head>
-  
-  <body class="m-0" style="font-family: 'Jersey 25', serif;">
-    
-    <!-- WEBGL CANVAS AT BACKGROUND -->
-    <canvas id="web-gl-canvas" class="absolute -z-20"></canvas>
+  <!-- TAILWIND -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- CONTENT WRAPPER -->
-    <div class="flex flex-col gap-2 justify-center items-center w-[100vw] h-[100vh] bg-black/30 text-white absolute backdrop-blur-sm">
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
 
-      <!-- HEADER -->
-      <section>
+</head>
+
+<body class="m-0" style="font-family: 'Jersey 25', serif;">
+
+  <!-- WEBGL CANVAS AT BACKGROUND -->
+  <canvas id="web-gl-canvas" class="absolute -z-20"></canvas>
+
+  <!-- CONTENT WRAPPER -->
+  <div
+    class="flex flex-col gap-2 justify-center items-center w-[100vw] h-[100vh] bg-black/30 text-white absolute backdrop-blur-sm">
+
+    <!-- HEADER -->
+    <section>
       <h1 class="text-7xl font-black">
-	GIANNELLI ILENDA
+        <a href="#" onclick="goHome()">GIANNELLI ILENDA</a>
       </h1>
-      </section>
+    </section>
 
-      <!-- CONTENT -->
+    <!-- CONTENT -->
 
-      <section>
-	<div id="content-wrapper" class="h-0 max-h-[60vh] ease-in-out duration-300 overflow-hidden">
+    <section>
+      <div id="content-wrapper" class="h-0 max-h-[60vh] ease-in-out duration-300 overflow-hidden">
 
-	  <div id="content-work" class="h-0 collapse">
-       <iframe src="item.html" class="w-[100%] h-[60vh] flex justify-center items-center"></iframe>
-	  </div>
-	  
-	  <div id="content-contact" class="h-0 collapse">
-	    <div class="flex flex-col justify-center items-center h-[25vh] w-[60vw] mb-6 rounded-md border-solid border-2 border-white bg-white/50">
-	      <div class="h-[30%] flex items-center justify-center">
-		<h3 class="text-3xl">CONTACT</h3>
-		</div>
-	      <hr class="w-[100%]">
-	      <div class="flex flex-col grow justify-center items-center">
-	      <p>email: poweredbygeeko@gmail.com</p>
-	      <p>tel: +447947626084
-		</div>
-	    </div>
-	  </div>
-	  
-	</div>
-      </section>
-      
-      <!-- NAVIGATION BAR -->
-      <nav>
-	<ul>
-	  <li class="inline mx-3"><a href="#">ABOUT</a></li>
-	  -
-	  <li class="inline mx-3"><a href="#" onclick="showWork()">WORK</a></li>
-	  -
-	  <li class="inline mx-3"><a href="#" onclick="showContact()">CONTACT</a></li>
-	</ul>
-      </nav>
-      
-    </div>
-  </body>
+        <!-- ABOUT -->
+        <div id="content-about" class="h-0 overflow-hidden">
+          <div
+            class="flex flex-col justify-center items-center w-[30vw] rounded-md border-solid border-2 border-white bg-white/50">
+            <div class="flex items-center justify-center py-2">
+              <h3 class="text-3xl">ABOUT</h3>
+            </div>
+            <hr class="w-[100%]">
+            <div class="flex flex-col grow justify-center items-center py-4 px-14 text-center">
+              <p>My name is Giannelli. I love computers, programming and software development. I'm based in London.</p> 
+            </div>
+
+          </div>
+
+      </div>
+
+      <!-- WORK -->
+        <iframe id="content-work" src="item.html" class="w-0 h-0 flex justify-center items-center"></iframe>
+
+        <!-- CONTACT -->
+        <div id="content-contact" class="h-0 overflow-hidden">
+          <div
+            class="flex flex-col justify-center items-center w-[30vw] rounded-md border-solid border-2 border-white bg-white/50">
+            <div class="flex items-center justify-center py-2">
+              <h3 class="text-3xl">CONTACT</h3>
+            </div>
+            <hr class="w-[100%]">
+            <div class="flex flex-col grow justify-center items-center py-4">
+              <p>email: poweredbygeeko@gmail.com</p>
+              <p>tel: +447947626084
+            </div>
+
+
+          </div>
+
+
+          <!-- LINKS -->
+          <center>
+            <div class=" h-[3vh] mt-5 mb-2">
+              <a href="https://www.linkedin.com/in/gkandandji94/" target="_blank"><img src="img/linkedin.png"
+                  class="inline max-h-[100%] mx-2" /></a>
+              <a href="https://www.twitter.com/GeekoSoftware" target="_blank"><img src="img/twitter.png"
+                  class="inline max-h-[100%] mx-2" /></a>
+              <a href="https://www.instagram.com/GeeKoSoftware" target="_blank"><img src="img/instagram.png"
+                  class="inline max-h-[100%] mx-2" /></a>
+            </div>
+          </center>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- NAVIGATION BAR -->
+    <nav>
+      <ul>
+        <li class="inline mx-3"><a href="#" onclick="showAbout()">ABOUT</a></li>
+        -
+        <li class="inline mx-3"><a href="#" onclick="showWork()">WORK</a></li>
+        -
+        <li class="inline mx-3"><a href="#" onclick="showContact()">CONTACT</a></li>
+      </ul>
+    </nav>
+
+
+  </div>
+</body>
+
 </html>
