@@ -40,8 +40,8 @@ const triangle = new Triangle(scale);
 //const sphere = new Sphere(0.25, 2);
 
 var positionDelta = new Vector3D(
-    Math.random() * 0.02 * (Math.random() > 0.5 ? -1 : 1),
-    Math.random() * 0.02 * (Math.random() > 0.5 ? -1 : 1),
+    Math.random() * 0.01 * (Math.random() > 0.5 ? -1 : 1),
+    Math.random() * 0.01 * (Math.random() > 0.5 ? -1 : 1),
     0
 );
 var rotationDelta = Math.random() * (Math.random() > 0.5 ? -1 : 1);
